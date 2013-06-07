@@ -1,0 +1,400 @@
+#Tipos numericos
+#int, float, long, complex
+
+#Colecciones basicas
+#tuple, list dict, set, frozenset
+
+#lista
+#<list>
+#Literal: []
+
+#diccionario
+#<dict>
+#Literal: {}
+
+#Tipo Boleanos
+#True / False
+
+#Cadenas
+#sir, unicode
+
+#if/else, if/el if/else
+#while
+#for
+
+
+
+*Consultas
+
+buildins
+
+#=========================================================================================
+
+#python ejemplo.py
+
+>>> 13+90
+103
+>>> str(9)9
+  File "<stdin>", line 1
+    str(9)9
+          ^
+SyntaxError: invalid syntax
+>>> str(9)
+'9'
+>>> a = "año"
+>>> print a
+año
+>>> 
+
+#!/usr/bin//python
+
+*No acepta comentario de Bloques, pero se puede usar:
+
+#
+#
+#http://mundogeek.net/traducciones/guia-estilo-python.html
+
+
+Ejemplo Linux:
+
+#chmod +x ejemplo.py
+./ejemplo.py
+
+#Operadores +, -, /, *, **(exponencial)
+
+>>> 10**4
+10000
+>>> 3**3
+27
+
+type<te da el tipo de dato>
+
+>>> type(343)
+<type 'int'>
+
+>>> from decimal import Decimal
+>>> Decimal(10)
+Decimal('10')
+
+
+##Variables
+
+>>> nombre = "Juan"
+>>> print(nombre)
+Juan
+>>> type(nombre)
+<type 'str'>
+
+##Información de que tipo de dato estamos trabajando
+
+>>> help(type(nombre))
+
+Help on class str in module __builtin__:
+
+class str(basestring)
+ |  str(object) -> string
+ |  
+ |  Return a nice string representation of the object.
+ |  If the argument is a string, the return value is the same object.
+ |  
+ |  Method resolution order:
+ |      str
+ |      basestring
+ |      object
+ |  
+ |  Methods defined here:
+ |  
+ |  __add__(...)
+ |      x.__add__(y) <==> x+y
+ |  
+ |  __contains__(...)
+ |      x.__contains__(y) <==> y in x
+ |  
+ |  __eq__(...)
+ |      x.__eq__(y) <==> x==y
+:
+
+
+
+##Llega a ver un momento en el que no sabemos que variables estan en uso
+
+>>> nombre = "Juan"
+>>> edad=24
+>>> ciudad = 'Monterrey'
+>>> print(nombre)
+Juan
+>>> tuple
+<type 'tuple'>
+#Ejemplo tupla
+>>> x=(1,2,3,4,5,6,7,8,9)
+>>> print(x)
+(1, 2, 3, 4, 5, 6, 7, 8, 9)
+
+##^ No es un arreglo(pues no se puede editar)
+
+>>> y=(x,'Juan',2.5)
+>>> y
+((1, 2, 3, 4, 5, 6, 7, 8, 9), 'Juan', 2.5)
+
+#######################################
+#####Ayuda a saber si existe otro objeto con el mismo dato##################
+
+>>> ['Juan',24,2.5, u'cadena unicode']
+['Juan', 24, 2.5, u'cadena unicode']
+>>> milista=['Juan',24,2.5, u'cadena unicode']
+>>> mi_lista=milista
+>>> mi_lista
+['Juan', 24, 2.5, u'cadena unicode']
+>>> id(milista)
+4344627000
+>>> id(mi_lista)
+4344627000
+>>> 
+
+
+###Llegar a un elemento de una tupla
+
+>>> x=[1,2,3,4]
+>>> x=(1,2,3,4)
+>>> x[2]
+3
+
+
+#######
+
+>>> [milista[1],mi_lista[2]]
+[24, 2.5]
+>>> 
+
+>>> milista[1:3]
+[24, 2.5]
+>>> 
+
+######indica el salto
+
+>>> milista[1:5:3]
+[24]
+>>> milista[1:5:1]
+[24, 2.5, u'cadena unicode']
+
+>>> milista[1:5:2]
+[24, u'cadena unicode']
+>>> 
+======================================================================================
+Se refiere a algunos elementos de la lista
+>>> (1,2,3,4,5)[1:4]
+(2, 3, 4)
+>>> (1,2,3,4,5,6,7,8,9)[1:4]
+(2, 3, 4)
+
+==========================================================================
+Borrar elementos
+
+>>> del mi_lista[0:3]
+>>> mi_lista
+[u'cadena unicode']
+
+####Toma el ultimo valor '_'
+
+>>> _
+[u'cadena unicode', 1, u'cade unicode']
+>>> nuevalista = _
+>>> nuevalista 
+[u'cadena unicode', 1, u'cade unicode']
+>>> 
+
+========================
+De tupla a lista
+
+>>> t=('a','b','c')
+>>> list(t)
+['a', 'b', 'c']
+>>> 
+
+
+==========================================================================================
+
+>>> locals()
+{'a': 'a\xc3\xb1o', 'edad': 24, 'nuevalista': [u'cadena unicode', 1, u'cade unicode'], '__builtins__': <module '__builtin__' (built-in)>, 'Decimal': <class 'decimal.Decimal'>, '__package__': None, 'milista': [u'cadena unicode'], 'this': <module 'this' from '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/this.py'>, 'ciudad': 'Monterrey', 'x': (1, 2, 3, 4), 'nombre': 'Juan', 'y': ((1, 2, 3, 4, 5, 6, 7, 8, 9), 'Juan', 2.5), '__name__': '__main__', '__doc__': None, 'mi_lista': [u'cadena unicode'], 't': ('a', 'b', 'c')}
+>>> from pprint import pprint
+>>> pprint(locals())
+{'Decimal': <class 'decimal.Decimal'>,
+ '__builtins__': <module '__builtin__' (built-in)>,
+ '__doc__': None,
+ '__name__': '__main__',
+ '__package__': None,
+ 'a': 'a\xc3\xb1o',
+ 'ciudad': 'Monterrey',
+ 'edad': 24,
+ 'mi_lista': [u'cadena unicode'],
+ 'milista': [u'cadena unicode'],
+ 'nombre': 'Juan',
+ 'nuevalista': [u'cadena unicode', 1, u'cade unicode'],
+ 'pprint': <function pprint at 0x103151398>,
+ 't': ('a', 'b', 'c'),
+ 'this': <module 'this' from '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/this.py'>,
+ 'x': (1, 2, 3, 4),
+ 'y': ((1, 2, 3, 4, 5, 6, 7, 8, 9), 'Juan', 2.5)}
+>>> 
+
+=====Help on function pprint in module pprint:
+
+pprint(object, stream=None, indent=1, width=80, depth=None)
+    Pretty-print a Python object to a stream [default is sys.stdout].
+(END) 
+
+==========================================================================================
+Metodo
+
+>>> a = [1,2,3,4,5]
+>>> a.reverse()
+>>> a
+[5, 4, 3, 2, 1]
+>>> 
+
+==========================================================================================
+
+Creación de un objeto
+
+>>> persona = {'nombre':'Juan','edad':'24','ciudad':'Monterrey'}
+>>> persona
+{'edad': '24', 'nombre': 'Juan', 'ciudad': 'Monterrey'}
+>>> pprint(persona)
+{'ciudad': 'Monterrey', 'edad': '24', 'nombre': 'Juan'}
+>>> 
+
+==========================================================================================
+Consultar un valor(en este ejemplo marca error por que no se encuentra '0')
+
+{'ciudad': 'Monterrey', 'edad': 24, 'nombre': 'Juan'}
+>>> persona[0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 0
+>>> persona['edad']
+24
+
+===========================================================================
+
+>>> localidad={'pais':'Mexico','ciudad':'Monterrey','estado':'Nuevo Leon'}
+>>> persona
+{'edad': 24, 'nombre': 'Juan', 'ciudad': 'Monterrey'}
+>>> persona['localidad']= localidad
+>>> persona['localidad']['estado']
+'Nuevo Leon'
+>>> print persona
+{'edad': 24, 'nombre': 'Juan', 'ciudad': 'Monterrey', 'localidad': {'pais': 'Mexico', 'ciudad': 'Monterrey', 'estado': 'Nuevo Leon'}}
+>>> pprint(persona)
+{'ciudad': 'Monterrey',
+ 'edad': 24,
+ 'localidad': {'ciudad': 'Monterrey',
+               'estado': 'Nuevo Leon',
+               'pais': 'Mexico'},
+ 'nombre': 'Juan'}
+>>> 
+
+============================================================================
+
+remplazamos con el metodo pop
+
+>>> pprint(persona)
+{'edad': 24,
+ 'localidad': {'ciudad': 'Monterrey',
+               'estado': 'Nuevo Leon',
+               'pais': 'Mexico'},
+ 'nombre': 'Juan'}
+>>> persona['direccion']=persona.pop('localidad')
+>>> pprint(persona)
+{'direccion': {'ciudad': 'Monterrey',
+               'estado': 'Nuevo Leon',
+               'pais': 'Mexico'},
+ 'edad': 24,
+ 'nombre': 'Juan'}
+>>> 
+***************Tamaño de la lista
+
+>>> len (persona)
+3
+>>> len(persona)
+3
+>>> len(mi_lista)
+1
+>>> len(mi_lista[0])
+14
+>>> 
+
+==========================================================
+       ---------corches=tupla ()=lista----------
+>>> """efkrgefedg
+... gregdhg
+... grg
+... erwef"""
+'efkrgefedg\ngregdhg\ngrg\nerwef'
+>>> ('juan'
+... 'de'
+... 'Dios'
+... )
+'juandeDios'
+>>> ('palabra''asd''afdf')
+'palabraasdafdf'
+>>> 
+====================================================================
+>>> for k in persona:
+...    print k
+... 
+edad
+direccion
+nombre
+
+=======================================================================
+if
+!=, ==, <=, >=,<,>
+
+>>> if False:
+...   print'a'
+... else:
+...  print'b'
+... 
+b
+
+========================================================================
+For
+
+[i for i in xrange(1,101) if not i % 5]
+[5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]
+>>> 
+
+ó
+
+>>> m5=[]
+>>> for i in xrange(50,101):
+...     if not i % 5:
+...        m5.append(i)
+... 
+>>> m5
+[50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100]
+
+
+=========================================================================
+
+>>> for i in range(10):
+...  print i
+... else:
+...    print 'ok %s' %i
+... 
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+ok 9
+
+==========================================================================
+
+while
+
