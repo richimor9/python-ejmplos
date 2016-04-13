@@ -12,7 +12,7 @@ def principal():
     if opcion == "1":
         ModdeAg.escribir()
         principal()
-    elif opcion == "2":
+    elif opcion == "2":cxseksjksj
         print("\nCuantos numeros quieres ver:")
         registros = input("\n>")
         registrosnum = int(registros)
@@ -27,3 +27,4 @@ def principal():
         ModdeAg.mierror()
         principal()
 principal()
+
